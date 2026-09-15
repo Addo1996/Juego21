@@ -71,5 +71,14 @@ public class Juego21 {
 		jugador.recibirCarta(carta);
 
 	}
+	
+	// Reparte una carta a cada jugador
+	public void repartirRonda() {
+
+		for (Jugador jugador : jugadores) {
+			repartirCarta(jugador);
+		}
+
+	}
 
 }
