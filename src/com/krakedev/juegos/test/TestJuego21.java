@@ -1,5 +1,7 @@
 package com.krakedev.juegos.test;
 
+import java.util.ArrayList;
+
 import com.krakedev.juegos.entidades.Jugador;
 import com.krakedev.juegos.servicios.Juego21;
 
@@ -7,24 +9,6 @@ public class TestJuego21 {
 
 	public static void main(String[] args) {
 
-//		Juego21 juego = new Juego21();
-//
-//		// Inicializamos el juego
-//		juego.inicializar();
-//
-//		Jugador jugador = new Jugador();
-//		jugador.setNickName("Jugador1");
-//
-//		juego.agregarJugador(jugador);
-//
-//		// Repartimos una carta al jugador
-//		juego.repartirCarta(jugador);
-//
-//		jugador.imprimir();
-//
-//		System.out.println("Cartas del mazo: " + juego.getDealer().getNaipe().size());
-		
-		
 		Juego21 juego = new Juego21();
 
 		// Inicializamos el juego
@@ -43,10 +27,10 @@ public class TestJuego21 {
 		juego.agregarJugador(jugador2);
 		juego.agregarJugador(jugador3);
 
-		// Repartimos una carta a cada jugador
+		// Repartimos la primera carta
 		juego.repartirRonda();
-		
-		// Repartimos una segunda carta
+
+		// Repartimos la segunda carta
 		juego.repartirRonda();
 
 		jugador1.imprimir();
@@ -54,6 +38,19 @@ public class TestJuego21 {
 		jugador3.imprimir();
 
 		System.out.println("Cartas restantes: " + juego.getDealer().getNaipe().size());
+
+		// Asignamos puntajes para probar el ganador
+		jugador1.setPuntajeCartas(21);
+		jugador2.setPuntajeCartas(15);
+		jugador3.setPuntajeCartas(21);
+
+		ArrayList<Jugador> ganadores = juego.validarGanador();
+
+		System.out.println("Cantidad de ganadores: " + ganadores.size());
+
+		for (Jugador ganador : ganadores) {
+			System.out.println("Ganador: " + ganador.getNickName());
+		}
 	}
 
 }
