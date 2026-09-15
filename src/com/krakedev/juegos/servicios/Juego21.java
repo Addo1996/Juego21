@@ -55,14 +55,14 @@ public class Juego21 {
 		cargarValores();
 
 	}
-	
+
 	// Agrega un jugador al juego
 	public void agregarJugador(Jugador jugador) {
 
 		jugadores.add(jugador);
 
 	}
-	
+
 	// Entrega una carta del Dealer al jugador
 	public void repartirCarta(Jugador jugador) {
 
@@ -71,12 +71,28 @@ public class Juego21 {
 		jugador.recibirCarta(carta);
 
 	}
-	
+
 	// Reparte una carta a cada jugador
 	public void repartirRonda() {
 
 		for (Jugador jugador : jugadores) {
 			repartirCarta(jugador);
+		}
+		calcularTotal();
+	}
+
+	// Calcula el puntaje de cada jugador
+	public void calcularTotal() {
+
+		for (Jugador jugador : jugadores) {
+
+			int total = 0;
+
+			for (Carta carta : jugador.getCartas()) {
+				total = total + carta.getValorJuego();
+			}
+
+			jugador.setPuntajeCartas(total);
 		}
 
 	}

@@ -45,6 +45,9 @@ public class TestJuego21 {
 
 		// Repartimos una carta a cada jugador
 		juego.repartirRonda();
+		
+		// Repartimos una segunda carta
+		juego.repartirRonda();
 
 		jugador1.imprimir();
 		jugador2.imprimir();
