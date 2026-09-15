@@ -54,5 +54,12 @@ public class Dealer {
 		}
 
 	}
+	
+	// Genera un número aleatorio entre 0 y maximo
+	public int generarAleatoreo(int maximo) {
+		
+		return (int) (Math.random() * (maximo + 1));
+		
+	}
 
 }
