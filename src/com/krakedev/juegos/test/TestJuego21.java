@@ -51,6 +51,36 @@ public class TestJuego21 {
 		for (Jugador ganador : ganadores) {
 			System.out.println("Ganador: " + ganador.getNickName());
 		}
+		
+		System.out.println("\n--- PRUEBA JUGAR ---");
+
+		Juego21 juego2 = new Juego21();
+
+		juego2.inicializar();
+
+		Jugador jugador4 = new Jugador();
+		jugador4.setNickName("Jugador1");
+
+		Jugador jugador5 = new Jugador();
+		jugador5.setNickName("Jugador2");
+
+		Jugador jugador6 = new Jugador();
+		jugador6.setNickName("Jugador3");
+
+		juego2.agregarJugador(jugador4);
+		juego2.agregarJugador(jugador5);
+		juego2.agregarJugador(jugador6);
+
+		ArrayList<Jugador> ganadoresJuego = juego2.jugar();
+
+		System.out.println("Cantidad de ganadores: " + ganadoresJuego.size());
+
+		for (Jugador ganador : ganadoresJuego) {
+			System.out.println("Ganador: " + ganador.getNickName());
+		}
+		
 	}
+	
+	
 
 }
