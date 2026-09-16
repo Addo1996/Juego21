@@ -130,5 +130,16 @@ public class Juego21 {
 
 		return ganadores;
 	}
+	
+	// Limpia las cartas y puntajes para volver a jugar
+	public void reiniciar() {
+		for (Jugador jugador : jugadores) {
+			jugador.getCartas().clear();
+			jugador.setPuntajeCartas(0);
+		}
+
+		dealer = new Dealer();
+		cargarValores();
+	}
 
 }

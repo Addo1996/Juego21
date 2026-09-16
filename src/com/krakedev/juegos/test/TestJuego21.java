@@ -79,6 +79,16 @@ public class TestJuego21 {
 			System.out.println("Ganador: " + ganador.getNickName());
 		}
 		
+		System.out.println("\n--- PRUEBA REINICIAR ---");
+
+		juego2.reiniciar();
+
+		jugador4.imprimir();
+		jugador5.imprimir();
+		jugador6.imprimir();
+
+		System.out.println("Cartas del Dealer: " + juego2.getDealer().getNaipe().size());
+		
 	}
 	
 	
